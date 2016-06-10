@@ -19,7 +19,7 @@
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
             </ul>
           <% else %>
-            <ul>
+            <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to 'Sign up', new_user_registration_path %></li>
                 <li><%= link_to 'Sign in', new_user_session_path %></li>
               </ul>
@@ -29,12 +29,12 @@
     </div>
   </header>
 
-  <div id="main" class="container">
+  <div id="main_content" class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-#{name}")  %>
     <% end %>
 
-    <div id="container" class="col-md-9 center-block">
+    <div id="content" class="col-md-9 center-block">
       <%= yield %>
     </div>
   </div>
